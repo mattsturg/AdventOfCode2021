@@ -16,17 +16,17 @@ def sample_list():
             263]
 
 
-def test_day_01_sample(sample_list):
-    assert day01.numberIncreases(sample_list) == 7
+def test_day01_sample(sample_list):
+    assert day01.number_increases(sample_list) == 7
 
 
-def test_day01_part2_sample(sample_list):
-    assert day01.compareGroups(sample_list) == 5
+def test_day01_part_two_sample(sample_list):
+    assert day01.compare_groups(sample_list) == 5
 
 
 @pytest.fixture
 def real_list():
-    filename = "testData/day01Test.txt"
+    filename = "testData/day01_test.txt"
     return_list = []
     with open(filename, 'r') as fileHandle:
         for line in fileHandle:
@@ -35,8 +35,8 @@ def real_list():
 
 
 def test_day01(real_list):
-    assert day01.numberIncreases(real_list) == 1233
+    assert day01.number_increases(real_list) == 1233
 
 
-def test_day01_part_two(real_ist):
-    assert day01.compareGroups(real_list) == 1275
+def test_day01_part_two(real_list):
+    assert day01.compare_groups(real_list) == 1275
