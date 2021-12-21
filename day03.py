@@ -39,19 +39,9 @@ def split_least_most(numbers: List, index: int):
         return zeros, ones
 
 
-def least(numbers: List, index: int):
-    more, less = split_least_most(numbers, index)
-    return less
-
-
-def most(numbers: List, index: int):
-    more, less = split_least_most(numbers, index)
-    return more
-
-
 def calc_oxygen(possibilities: List) -> int:
     for i in range(1, len(possibilities[0])):
-        temp = most(possibilities, i)
+        temp = split_least_most(possibilities, i)[0]
         if len(temp) == 0:
             return possibilities[len(possibilities)-1]
         else:
@@ -61,7 +51,7 @@ def calc_oxygen(possibilities: List) -> int:
 
 def calc_co_two(possibilities: List) -> int:
     for i in range(1, len(possibilities[0])):
-        temp = least(possibilities, i)
+        temp = split_least_most(possibilities, i)[1]
         if len(temp) == 0:
             return possibilities[len(possibilities)-1]
         else:
